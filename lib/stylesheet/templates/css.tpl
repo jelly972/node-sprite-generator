@@ -1,2 +1,3 @@
-<% layout.images.forEach(function (image) { %>.<%= image.className %> { background-image: url('<%= options.spritePath %>'); <% if (options.pixelRatio !== 1) { %>background-size: <%= getCSSValue(layout.width) %> <%= getCSSValue(layout.height) %>; <% } %>background-position: <%= getCSSValue(-image.x) %> <%= getCSSValue(-image.y) %>; width: <%= getCSSValue(image.width) %>; height: <%= getCSSValue(image.height) %>; }
+.<%= options.prefix %> { background: url('<%= options.spritePath %>') no-repeat top left;  background-position: 0 0; width: <%= getCSSValue(layout.images[0].width) %>; height: <%= getCSSValue(layout.images[0].height) %>; }
+<% layout.images.forEach(function (image) { %>.<%= image.className %> { <% if (options.pixelRatio !== 1) { %>background-size: <%= getCSSValue(layout.width) %> <%= getCSSValue(layout.height) %>; <% } %>background-position: <%= getCSSValue(-image.x) %> <%= getCSSValue(-image.y) %>; }
 <% }); %>
